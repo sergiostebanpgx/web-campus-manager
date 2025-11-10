@@ -1,0 +1,117 @@
+<!-- Navbar -->
+<nav class="bg-gradient-to-r from-white via-primary-50 to-white shadow-xl sticky top-0 z-50 border-b border-primary-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16">
+      <!-- Logo y nombre -->
+      <div class="flex items-center">
+        <div class="flex-shrink-0 flex items-center group">
+          <div class="w-10 h-10 bg-gradient-to-br from-primary-600 to-primary-700 rounded-lg flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-200 group-hover:scale-105">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+            </svg>
+          </div>
+          <span class="ml-3 text-xl font-bold bg-gradient-to-r from-primary-700 to-primary-600 bg-clip-text text-transparent">
+            WebCampus Manager
+          </span>
+        </div>
+      </div>
+
+      <!-- Menú desktop -->
+      <div class="hidden md:flex md:items-center md:space-x-2">
+        <a routerLink="/courses"
+           routerLinkActive="bg-primary-100 text-primary-700"
+           [routerLinkActiveOptions]="{exact: false}"
+           class="px-4 py-2 text-secondary-700 hover:bg-primary-50 hover:text-primary-700 font-semibold rounded-lg transition-all duration-200">
+          Cursos
+        </a>
+        <a routerLink="/courses/new"
+           routerLinkActive="bg-primary-100 text-primary-700"
+           class="px-4 py-2 bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5">
+          + Nuevo Curso
+        </a>
+      </div>
+
+      <!-- Botón menú móvil -->
+      <div class="flex items-center md:hidden">
+        <button
+          (click)="toggleMenu()"
+          class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-primary-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500">
+          <span class="sr-only">Abrir menú</span>
+          <!-- Icon cuando el menú está cerrado -->
+          <svg *ngIf="!menuOpen" class="block h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <!-- Icon cuando el menú está abierto -->
+          <svg *ngIf="menuOpen" class="block h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Menú móvil -->
+  <div *ngIf="menuOpen" class="md:hidden bg-white/95 backdrop-blur-sm animate-fade-in">
+    <div class="px-4 pt-2 pb-3 space-y-2">
+      <a routerLink="/courses"
+         routerLinkActive="bg-gradient-to-r from-primary-600 to-primary-700 text-white shadow-md"
+         [routerLinkActiveOptions]="{exact: false}"
+         (click)="closeMenu()"
+         class="block px-4 py-3 rounded-lg text-base font-semibold text-secondary-700 hover:bg-primary-50 hover:text-primary-700 transition-all duration-200">
+        📚 Cursos
+      </a>
+      <a routerLink="/courses/new"
+         routerLinkActive="bg-gradient-to-r from-primary-600 to-primary-700 text-white shadow-md"
+         (click)="closeMenu()"
+         class="block px-4 py-3 rounded-lg text-base font-semibold text-secondary-700 hover:bg-primary-50 hover:text-primary-700 transition-all duration-200">
+        ➕ Nuevo Curso
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- Área de contenido principal -->
+<main class="min-h-screen">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <router-outlet></router-outlet>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="bg-gradient-to-br from-primary-900 to-primary-950 mt-auto">
+  <div class="max-w-7xl mx-auto px-4 py-6">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+      <!-- Logo y nombre -->
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 bg-gradient-to-br from-primary-400 to-primary-500 rounded-lg flex items-center justify-center shadow-lg">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="text-white font-semibold text-sm">WebCampus Manager</h3>
+          <p class="text-primary-200 text-xs">Sistema de Gestión Académica</p>
+        </div>
+      </div>
+
+      <!-- Desarrollador -->
+      <div class="flex flex-col md:flex-row items-center gap-3 text-xs text-primary-200">
+        <span>Desarrollado por</span>
+        <a
+          href="https://sergiostebanpgx.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-primary-100 hover:text-white font-medium transition-colors duration-200 underline decoration-primary-500 underline-offset-2 hover:decoration-primary-300">
+          Sergio Steban Parra Guarnizo
+        </a>
+      </div>
+
+      <!-- Copyright -->
+      <p class="text-primary-300 text-xs">
+        &copy; {{ currentYear }}
+      </p>
+    </div>
+  </div>
+</footer>

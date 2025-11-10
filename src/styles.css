@@ -1,1 +1,111 @@
-/* You can add global styles to this file, and also import other style files */
+/* Directivas de Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos globales personalizados */
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-gray-50 to-gray-100 text-secondary-900 font-sans;
+    font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+}
+
+@layer components {
+  /* Botones */
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800
+           text-white font-semibold py-2.5 px-5 rounded-lg
+           shadow-md hover:shadow-lg
+           transition-all duration-200
+           transform hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .btn-secondary {
+    @apply bg-gradient-to-r from-secondary-100 to-secondary-200 hover:from-secondary-200 hover:to-secondary-300
+           text-secondary-800 font-semibold py-2.5 px-5 rounded-lg
+           shadow-sm hover:shadow-md
+           transition-all duration-200
+           transform hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .btn-danger {
+    @apply bg-gradient-to-r from-error-600 to-error-700 hover:from-error-700 hover:to-error-800
+           text-white font-semibold py-2.5 px-5 rounded-lg
+           shadow-md hover:shadow-lg
+           transition-all duration-200
+           transform hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .btn-success {
+    @apply bg-gradient-to-r from-success-600 to-success-700 hover:from-success-700 hover:to-success-800
+           text-white font-semibold py-2.5 px-5 rounded-lg
+           shadow-md hover:shadow-lg
+           transition-all duration-200
+           transform hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  /* Tarjetas */
+  .card {
+    @apply bg-white rounded-xl shadow-lg p-6
+           transition-all duration-300
+           hover:shadow-xl hover:-translate-y-1
+           border border-gray-100;
+  }
+
+  /* Inputs */
+  .input-field {
+    @apply w-full px-4 py-2.5
+           bg-white border-2 border-secondary-200
+           rounded-lg
+           focus:ring-2 focus:ring-primary-500 focus:border-primary-500
+           outline-none
+           transition-all duration-200
+           placeholder:text-secondary-400;
+  }
+
+  .input-error {
+    @apply border-error-500 focus:ring-error-500 focus:border-error-500;
+  }
+
+  /* Badges */
+  .badge {
+    @apply px-3 py-1 rounded-full text-xs font-semibold inline-block;
+  }
+
+  .badge-success {
+    @apply bg-success-100 text-success-800 ring-1 ring-success-600/20;
+  }
+
+  .badge-warning {
+    @apply bg-warning-100 text-warning-800 ring-1 ring-warning-600/20;
+  }
+
+  .badge-error {
+    @apply bg-error-100 text-error-800 ring-1 ring-error-600/20;
+  }
+
+  .badge-info {
+    @apply bg-primary-100 text-primary-800 ring-1 ring-primary-600/20;
+  }
+}
+
+/* Scrollbar personalizada */
+@layer utilities {
+  .scrollbar-custom::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-track {
+    @apply bg-gray-100 rounded-lg;
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-thumb {
+    @apply bg-primary-400 rounded-lg hover:bg-primary-500;
+  }
+}

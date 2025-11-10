@@ -1,0 +1,18 @@
+/* Estilos específicos del componente Layout */
+/* Los estilos principales se manejan con Tailwind CSS */
+
+/* Animación suave para el menú móvil */
+nav > div:last-child {
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
