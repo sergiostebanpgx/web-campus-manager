@@ -507,7 +507,7 @@ web-campus-manager/
 
 ## 📝 Changelog
 
-### [1.0.0] - 2024-11-10
+### [1.0.0] - 2025-11-09
 
 #### 🎉 Versión Inicial Completa
 
@@ -669,7 +669,7 @@ Este es un proyecto académico desarrollado con fines educativos.
 
 ✅ **Versión**: 1.0.0
 ✅ **Estado**: Completado y Listo para Producción
-✅ **Última Actualización**: 10 de Noviembre de 2024
+✅ **Última Actualización**: 09 de Noviembre de 2025
 
 ---
 
@@ -681,6 +681,6 @@ Sistema de Gestión de Cursos Académicos
 
 Desarrollado con ❤️ usando Angular 20, Tailwind CSS y TypeScript
 
-[Ver Demo](#) | [Reportar Bug](#) | [Solicitar Feature](#)
+[Ver Demo](https://web-campus-manager.vercel.app/courses) | [Reportar Bug](#) | [Solicitar Feature](#)
 
 </div>
